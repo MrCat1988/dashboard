@@ -1,3 +1,3 @@
-# dashboard
-## Dashboard for different projects
-Created with tailwind and alpine.js
+# Tailwind and Alpine JS Dashboard
+## Simple dashboard
+Created with tailwind and alpine.js to understand tailwind grid managment and alpine JS transition
