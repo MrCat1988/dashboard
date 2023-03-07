@@ -5,53 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+
     <link rel="stylesheet" href="../dist/output.css">
     <script src="../dist/alpine.min.js" defer></script>
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body class="bg-gray-100">
 
-   <!-- component -->
-<div class="md:flex flex-col md:flex-row md:min-h-screen w-full">
-  <div @click.away="open = false" class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
-    <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
-      <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-md dark-mode:text-white focus:outline-none focus:shadow-outline">Dashboard</a>
-      <button class="md:hidden rounded-md focus:outline-none focus:shadow-outline" @click="open = !open">
-        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-          <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-          <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-        </svg>
-      </button>
-    </div>
-    <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-md dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Blog</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Portfolio</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
-      <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contact</a>
-      <div @click.away="open = false" class="relative" x-data="{ open: false }">
-        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-md dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-          <span>Dropdown</span>
-          <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-        </button>
-        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
-          <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
-            <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </div>
+<!-- NAVBAR -->
   
-  <div class="content">
-    <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ea amet perspiciatis, enim, vero voluptatem qui expedita modi sequi labore eos obcaecati distinctio! Laboriosam maiores fugit fuga voluptas libero cum perspiciatis perferendis, tempora distinctio amet atque reiciendis dignissimos fugiat labore. Nobis voluptatum, fugiat placeat aliquam soluta, animi nihil autem est illum tempora id magni quos aperiam earum praesentium minima provident ex optio cupiditate exercitationem repudiandae quam sapiente ea quo? Tempore ex quibusdam dolore unde voluptates, asperiores, quae quisquam maxime sed deleniti eos consequatur fuga animi qui repellat, accusantium commodi. Totam magnam quidem magni obcaecati! Magni ipsum doloribus aut adipisci! Nesciunt voluptatibus porro possimus ab deleniti autem sed praesentium sint exercitationem natus eveniet dolorem doloremque tempore delectus, aut accusantium dignissimos id debitis vel beatae, hic enim! Cupiditate reiciendis modi eaque autem, saepe ad assumenda facere incidunt rem error omnis possimus nesciunt laboriosam at esse nihil maiores, laborum animi neque sit optio?</p>
-  </div>
+<div class="md:flex">
 
+  <!-- component -->
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full ">
+ <div @click.away="open = false" class="flex flex-col w-full md:w-64 text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0" x-data="{ open: false }">
+   <div class="flex-shrink-0 px-8 py-4 flex flex-row items-center justify-between">
+     <a href="#" class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-md dark-mode:text-white focus:outline-none focus:shadow-outline">Dashboard</a>
+     <button class="md:hidden rounded-md focus:outline-none focus:shadow-outline" @click="open = !open">
+       <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+         <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+         <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+       </svg>
+     </button>
+   </div>
+   <nav :class="{'block': open, 'hidden': !open}" class="flex-grow md:block px-4 pb-4 md:pb-0 md:overflow-y-auto">
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-gray-200 rounded-md dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Blog</a>
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Portfolio</a>
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">About</a>
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Contact</a>
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Settings</a>
+     <a class="block px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Logout</a>
+
+     <div @click.away="open = false" class="relative" x-data="{ open: false }">
+       <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-md dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:block hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+         <span>Dropdown</span>
+         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+       </button>
+       <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+         <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+           <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #1</a>
+           <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #2</a>
+           <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-md dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Link #3</a>
+         </div>
+       </div>
+     </div>
+   </nav>
+ </div>
+ 
+ 
 </div>
 
-    
+
+
+
+<!-- CONTENT -->
+<div class="content p-5 bg-gray-100">
+
+  <div class="content-bar flex mb-5">
+    <h5 class="flex-grow font-bold">Factura</h5>
+    <h6 class="text-gray-500">Dashboard / Nueva Venta</h6>
+  </div>
+  <div class="content">
+
+    <div class="grid grid-cols-4 gap-5 mb-5">
+      <div class="bg-slate-200 text-center p-3 rounded-md">1</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">2</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">3</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">4</div>
+    </div>
+    <div class="grid grid-cols-3 gap-5 mb-5">
+      <div class="bg-slate-200 text-center p-3 rounded-md">1</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">2</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">3</div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-5 mb-5">
+      <div class="bg-slate-200 text-center p-3 rounded-md">1</div>
+      <div class="bg-slate-200 text-center p-3 rounded-md">2</div>
+    </div>
+
+  </div>
+  <div class="">
+    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsa esse voluptatibus, explicabo eaque placeat animi consequatur doloremque libero architecto! Mollitia, est minus maiores eos dolorum ducimus cupiditate placeat cumque tenetur dolore praesentium odio illum earum voluptatem sequi, sint quisquam aperiam delectus. Perspiciatis saepe minus praesentium tenetur harum vero rerum repellat vel dolore, porro dolorem, quibusdam corporis. Praesentium dolorem natus magnam porro cumque laudantium unde nemo. Ducimus ipsa animi praesentium cumque numquam veniam, sint non architecto sequi aperiam facilis debitis molestias incidunt, quasi et voluptas ullam dolor! Aut ullam autem quia repudiandae reiciendis repellendus non aliquid corporis quae molestiae labore, alias officia ducimus sapiente, totam temporibus. Saepe dolore qui aliquam est consectetur tenetur earum tempore sed doloribus provident, ipsam rerum ut rem modi quibusdam quae illo soluta quisquam distinctio animi officia totam numquam odit. Asperiores praesentium voluptatum porro eligendi ipsa amet id. Consequatur omnis fugiat quo odio sed autem quisquam quia labore beatae sunt atque numquam facere earum dicta obcaecati, iusto quidem mollitia distinctio quasi vero. Voluptas eveniet esse, eos, minima, in quis veniam iure rerum omnis inventore similique natus sint deserunt tempora possimus. Delectus dolorum molestiae provident accusamus consectetur minus assumenda magni exercitationem natus quod. Consequuntur pariatur tenetur officia ex facilis? Nesciunt iusto dolores, accusantium deleniti unde debitis, facere totam rem aspernatur at illo illum officia? Asperiores sequi doloribus omnis ut quisquam cumque ratione pariatur? Vel unde autem consequuntur quasi tempora, accusamus sapiente repudiandae, rerum fugiat excepturi molestiae culpa praesentium quibusdam dolor? Et repellat sequi voluptas odit cum a, at veritatis rem optio temporibus eum accusamus corporis ipsam incidunt delectus blanditiis in minima explicabo, quos nisi architecto illo. Consequatur quia dicta minima aliquam, asperiores quas, esse iste obcaecati amet, nam explicabo at nihil aut incidunt quis. Nisi repudiandae officiis distinctio, tempore laudantium minima ullam perferendis obcaecati debitis inventore provident consectetur reprehenderit dolorum quaerat nobis! A quia, non nam quos beatae autem perspiciatis ratione sed, et quis voluptas voluptatum magnam assumenda atque? Ad, dolor? Eum voluptate inventore cupiditate soluta itaque deserunt, optio amet rem sit neque doloribus doloremque commodi minus repellat odit quia aliquam quos repellendus facilis quisquam numquam laboriosam suscipit harum ex. Nulla quos quae fuga ut laborum cum voluptatibus impedit ab sit obcaecati error similique non, voluptas omnis debitis numquam corrupti ipsam veniam eos voluptate deserunt quia. Dolorum nihil quasi neque ea. Perferendis ipsam ullam dolorum veniam corrupti nisi veritatis dolorem quidem ut obcaecati quisquam ratione autem, explicabo ea necessitatibus. Inventore dolorum repudiandae impedit, quibusdam minus reiciendis dolor porro id asperiores excepturi, fugiat officia alias nam nihil incidunt! Expedita necessitatibus ullam recusandae, adipisci perspiciatis fuga aliquam qui velit autem ipsam delectus eos deserunt quidem, magni odio iste incidunt rem saepe nisi hic, voluptate amet tenetur. Beatae voluptatibus voluptatum, perspiciatis magni fugit delectus temporibus officiis nihil autem eveniet soluta nobis doloribus pariatur atque aliquid tempore, assumenda est iusto tenetur consequuntur repellendus corporis porro magnam facere. Officia vero consequatur ea dolor nihil ab error, fugiat dolorem aliquam consectetur tempore inventore enim recusandae iusto quia praesentium nisi dicta cumque a incidunt?</p>
+  </div>
+
+
+</div>
+   
+</div>
     
     
 </body>
-</html>
+</html> 
